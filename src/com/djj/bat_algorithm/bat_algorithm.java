@@ -16,6 +16,7 @@ public class bat_algorithm {
 	public static double A=0.3;//响度
 	public static double r=0.4;//脉冲发射频率
 	public static int N_gen=1000;//迭代次数
+	public static int t=1;
 	public static int n=10;//种群数量
 	public static int Fnew=100;
 	public static double []fi=new double []{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0};//搜索脉冲频率
@@ -63,12 +64,16 @@ public class bat_algorithm {
 			best=x[i];
 			res_min=Fnew;
 		}
+		//A=rand.nextDouble()*A;
+		//r=r*(1-Math.exp(0-rand.nextInt(10)*(t++)));
 	}
     public static void find(){
     	for(int i=0;i<N_gen;i++){
     		for(int j=0;j<n;j++){
     			update(j);
     		}
+    		//A=rand.nextDouble()*A;
+    		//r=r*(1-Math.exp(0-rand.nextInt(10)*(t++)));
     		System.out.println("第"+i+"代"+res_min);
     	}
     }
